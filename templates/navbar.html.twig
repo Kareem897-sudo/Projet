@@ -1,0 +1,72 @@
+<div class="fixed-top">
+	<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom border-light shadow-lg">
+
+		<a class="navbar-brand" href="{{path('index')}}">
+			<img class="#" src="{{asset('assets/images/cinemaUniverse.jpg')}}" alt="logo_Cinema_Universe">
+		</a>
+
+		
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="navbar-collapse collapse show" id="navbarSupportedContent" style="">
+			<ul
+				class="navbar-nav mr-auto">
+			</ul>
+
+			<ul class="navbar-nav text-center">
+
+
+				<li class="nav-item">
+					<a class="nav-link text-dark" href="{{path('index')}}" aria-disabled="true">Page d'accueil</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link text-dark" href="mailto:kareemferrah06@gmail.com" aria-disabled="true">Contact</a>
+				</li>
+					{% if is_granted('ROLE_ADMIN') %}
+					<li class="nav-item">
+						<a class="nav-link text-" href="/admin/utilisateurs"  aria-disabled="true">
+							Administrateur</a>
+							{% endif %}
+					</li>
+
+
+				{% if app.user %}
+				<li class="nav-item">
+					<a class="nav-link text-dark" href="{{path('compte')}}" aria-disabled="true">Mon compte</a>
+				</li>
+				{% endif %}
+
+
+				{% if app.user %}
+					<li class="nav-item">
+						<a class="nav-link text-dark" href="{{path('app_logout')}}" aria-disabled="true">Se déconnecter</a>
+					</li>
+
+				{% else %}
+					<li class="nav-item">
+						<a class="nav-link text-dark" href="{{path('app_login')}}" aria-disabled="true">
+							Se connecter</a>
+					</li>
+
+					
+
+
+					<a class="btn btn-outline-dark justify-content-center" href="{{path('app_register')}}">
+						S'inscrire
+						<svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-arrow-right-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z"/>
+						</svg>
+					</a>
+				{% endif %}
+
+				
+
+
+			</ul>
+		</div>
+	</nav>
+</div>
+
+<br><br>

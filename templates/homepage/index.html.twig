@@ -1,0 +1,144 @@
+ {% extends "base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+{% block body %}
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>CinemaUniverse</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+  </head>
+
+  <br>
+  <body>
+  <br><br> 
+
+  {% if is_granted('ROLE_USER') %}
+  <div class="bienvenue">
+    <h2 class="text-center"> Bienvenue {{app.user.prenom}} {{app.user.nom}} ! </h2>
+    {% endif %}
+  </div><br>
+         
+  <blockquote class="blockquote text-center">
+      <p class="mb-0">Le cinéma est fait pour tous ceux dont la curiosité est le plus grand défaut.</p>
+      <footer class="blockquote-footer"><cite title="Source Title">Claude Lelouche</cite></footer>
+  </blockquote>
+
+
+  <div class="container"><br>
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+          <a class="p-2 text-muted" href="{{path('comedie_page')}}" target="_blank">Comédie</a>
+          <a class="p-2 text-muted" href="{{path('drame_page')}}" target="_blank">Drame</a>
+          <a class="p-2 text-muted" href="{{path('action_page')}}" target="_blank">Action</a>
+          <a class="p-2 text-muted" href="{{path('western_page')}}" target="_blank">Western</a>
+          <a class="p-2 text-muted" href="{{path('historique_page')}}" target="_blank">Historique</a>
+          <a class="p-2 text-muted" href="{{path('triller_page')}}" target="_blank">Thriller</a>
+          <a class="p-2 text-muted" href="{{path('fantastique_page')}}" target="_blank">Fantastique</a>
+          <a class="p-2 text-muted" href="{{path('sf_page')}}" target="_blank">Science-fiction</a>
+          <a class="p-2 text-muted" href="{{path('catastrophe_page')}}" target="_blank">Catastrophe</a>
+          <a class="p-2 text-muted" href="{{path('aventure_page')}}" target="_blank">Aventure</a>
+          <a class="p-2 text-muted" href="{{path('opera_page')}}" target="_blank">Opéra</a>
+          <a class="p-2 text-muted" href="{{path('fantasy_page')}}" target="_blank">Fantasy</a>
+      </nav>
+  </div>
+
+  <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">C'est quoi le cinéma ?</h1>
+      <p class="lead my-3">Le cinéma, qu’est-ce que c’est ? Savez-vous l’expliquer ? On pourrait se contenter de répondre que c’est un art et une industrie, mais qu’est-ce qui se cache derrière ces deux termes que l’on pourrait croire contradictoire ? Qu’est-ce qui définit le cinéma exactement ?</p>
+     
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Historique</strong>
+          <h3 class="mb-0">Braveheart</h3>
+          <p class="card-text mb-auto">L'Ecosse, à la fin du XIIIe siècle. Edouard Ier, roi d'Angleterre, s'empare du trône après avoir réglé un conflit avec le personnage fantoche qu'il y avait auparavant placé. Avec ses barons, il met très rapidement le pays en coupe réglée. William Wallace, dont la femme, comme tant d'autres, a été exécutée par les Anglais, prend la tête d'une révolte paysanne.</p>
+         
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Science-fiction</strong>
+          <h3 class="mb-0">Wolverine : Le Combat de l'immortel</h3>
+          <p class="mb-auto">Logan, l'éternel guerrier marginal, vit reclus dans les montagnes et fait difficilement le deuil de Jean Grey. Sur invitation donnée par Yukio, une mutante capable de lire l'avenir et de voir les morts des autres, il se rend au Japon où Yashida, un ancien officier japonais dont il a sauvé la vie en 1945 lors du bombardement de Nagasaki, lui propose un marché : en échange de sa capacité à guérir, il s'engage à le rendre mortel à nouveau.</p>
+         
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <h3 class="pb-4 mb-4 font-italic border-bottom text-center">
+        Film, Actualités
+      </h3>
+
+      <div class="blog-post">
+      <h2 class="text-center">Actualité du moment</h2>
+      <br>  
+        <h2 class="blog-post-title">Tenet (Christopher Nolan, 2020)</h2>
+        <p class="blog-post-meta"><strong>Genre</strong> : Action, Espionnage, Science-Fiction, Thriller</p>
+        <p class="blog-post-meta"><strong>Réalisateur</strong> : Christopher Nolan</p>
+        <p class="blog-post-meta"><strong>Distribution</strong> : John David Washington, Robert Pattinson, Elizabeth Debicki, Kenneth Branagh</p>
+        <p class="blog-post-meta"><strong>Année de sortie</strong> : 2020</p>
+        <p class="blog-post-meta"><strong>Synopsis</strong> : Muni d’un seul mot – Tenet – et décidé à se battre pour sauver le monde, notre protagoniste sillonne l’univers crépusculaire de l’espionnage international. Sa mission le projettera dans une dimension qui dépasse le temps. Pourtant, il ne s’agit pas d’un voyage dans le temps, mais d’un renversement temporel… </p>
+
+        <div class="container text-center">
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/GpoaAp1mSmg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div><!-- /.blog-post -->
+
+
+
+      
+
+    </div><!-- /.blog-main -->
+
+    <aside class="col-md-4 blog-sidebar">
+      <div class="p-4 mb-3 bg-light rounded">
+        <h4 class="font-italic text-center">Le saviez-vous ?</h4>
+        <p class="mb-0">Tom et Jerry<em>a remporté 7 oscars ! </em> Créée en 1940 par William Hanna et Joseph Barbera, la rivalité entre le chat Tom et la souris Jerry, a été nommée 12 fois aux oscars du meilleur court-métrage d’animation et en a remporté 7, ce qui est considéré comme un record pour cette catégorie de ces récompenses cinématographiques. Ce record est égalé par les Silly Symphonies des studios Disney.</p>
+      </div>
+
+      
+
+      <div class="p-4 mb-3 bg- rounded">
+        <h4 class="font-italic text-center">Réseaux</h4>
+        <ol class="list-unstyled text-center">
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ol>
+      </div>
+    </aside>
+
+    
+    </div>
+
+  </div>
+
+</main>
+</body>
+</html>
+
+
+
+{% endblock %}

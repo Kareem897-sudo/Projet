@@ -1,0 +1,62 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}Inscription
+{% endblock %}
+
+{% block body %}
+	{% for flashError in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+	{% endfor %}
+
+	{% include "navbar.html.twig" %}
+	<br><br>
+
+
+	<link rel="stylesheet" href="{{ asset('assets/css/register.css') }}"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+	<section class="container">
+		<section class="row justify-content-center">
+			<section class="col-lg-6 col-md-8 col-sm-8 col-xs-8">
+				<div class="form">
+					<h1>Inscrivez-vous !</h1>
+					{{ form_start(registrationForm) }}
+
+					{{ form_row(registrationForm.prenom, {'attr':{'placeholder':'Votre prénom '}}) }}
+					{{ form_row(registrationForm.nom, {'attr':{'placeholder':'Votre nom '}}) }}
+					{{ form_row(registrationForm.telephone, {'attr':{'placeholder':'Votre téléphone '}}) }}
+					
+
+					{{ form_row(registrationForm.email, {'attr':{'placeholder':'Veuillez saisir votre mail	 '}}) }}
+
+					{{ form_row(registrationForm.password, {'attr':{'placeholder':'Veuillez saisir votre mot de passe'}}) }}
+
+					{{ form_row(registrationForm.confirm_password, {'attr':{'placeholder':'Confirmez le mot de passe'}}) }}
+
+					
+						{{ form_row(registrationForm.agreeTerms, {
+                label: 'Accepter les termes'
+            }) }}
+					
+
+					<div class="text-center form-group">
+						<button type="submit" class="btn btn-dark btn-sm" href="{{ path('app_login')}}">Soumettre</button>
+					</div>
+					{{ form_end(registrationForm) }}
+					<br>
+
+
+					<div class="text-center lien">
+						Déjà membre ?
+						<span>
+							<a href="{{ path('app_login') }}">Se connecter</a>
+						</span>
+					</div>
+
+				</section>
+			</section>
+		</section>
+	</div>
+
+{% endblock %}

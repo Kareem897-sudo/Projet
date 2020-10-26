@@ -1,0 +1,53 @@
+.bobo {
+    min-height: 600px !important;
+}
+
+.res {
+    margin-top: -52px;    
+}
+
+
+@media (max-width: 991px) {
+    .btn {
+           
+
+        margin: auto;
+    }
+    .navbar-brand img {
+        max-width: 20vw !important;
+    }
+}
+
+.navbar-brand img {
+    max-width: 7vw;
+
+}
+
+.popo {
+    padding-top: 100px;
+}
+
+.form {
+    line-height: 10px!important;
+    width: 100%;
+    position: relative;
+    top: -5vh;
+}
+
+h1 {
+    font-size: 40px;
+    border-bottom: 2px solid rgb(190, 189, 189);
+    margin-bottom: 50px;
+    margin-top: -30px;
+    text-align:center;
+}
+
+.form-check-input {
+      position: absolute;
+    margin-top: 0rem;
+    margin-left: 0rem; 
+}
+
+
+
+

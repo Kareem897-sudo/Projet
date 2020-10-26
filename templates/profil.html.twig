@@ -1,0 +1,26 @@
+  {# {% extends "base.html.twig" %} #}
+
+{% block body %}
+{% include "navbar.html.twig" %}
+ <html>
+		<link rel="stylesheet" href="{{asset('assets/css/compte.css')}}">
+	</head>
+		<body>
+	   <input type="checkbox" id="check">
+       <label for="check">
+         <i class="fas fa-bars" id="btn"></i>
+         <i class="fas fa-times" id="cancel"></i>
+       </label>
+    <div class="sidebar">
+    <header>{{app.user.nom}} {{app.user.prenom}}</header>
+        <a href="#"><i class="fas fa-user"></i><span>Mon profil</span></a>
+        <a href="#"><i class="fas fa-address-card"></i><span>Mes articles</span></a>
+        <a href="#"><i class="fas fa-lock"></i><span>Mes commenataires</span></a>
+       </div>
+		</body>
+	</html>
+
+ {% endblock %}
+	
+
+

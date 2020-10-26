@@ -1,0 +1,131 @@
+{% block title %}Modification du mot de passe de
+	{{ app.user.prenom }}
+	{{ app.user.nom }}
+{% endblock %}
+
+{% block body %}
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	-->
+	<div class="grix xs4 container">
+
+		<div class="fixed-top">
+			<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom border-light shadow-lg">
+
+				<a class="navbar-brand" href="{{path('index')}}">
+					<img class="#" src="{{asset('assets/images/cinemaUniverse.jpg')}}" alt="logo_Cinema_Universe">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="navbar-collapse collapse show" id="navbarSupportedContent" style="">
+					<ul
+						class="navbar-nav mr-auto"><!-- <li class="text-decoration-none">
+												                    <a class="nav-link text-dark" href="/cuisines" tabindex="-1" aria-disabled="true"></a>
+												                </li>
+												
+												                <li class="nav-item1">
+												                    <a class="nav-link text-dark" href="/salles-de-bain" tabindex="-1" aria-disabled="true"></a>
+												                </li>
+												
+												                <li class="nav-item1">
+												                    <a class="nav-link text-dark" href="/dressing" tabindex="-1" aria-disabled="true"></a>
+												                </li>  -->
+					</ul>
+
+					<ul class="navbar-nav text-center">
+
+
+						<li class="nav-item">
+							<a class="nav-link text-dark" href="{{path('index')}}" aria-disabled="true">Page d'accueil</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link text-dark" href="mailto:kareemferrah06@gmail.com" aria-disabled="true">Contact</a>
+						</li>
+
+
+						{% if app.user %}
+							<li class="nav-item">
+								<a class="nav-link text-dark" href="{{path('compte')}}" aria-disabled="true">Mon compte</a>
+							</li>
+						{% endif %}
+
+
+						{% if app.user %}
+							<li class="nav-item">
+								<a class="nav-link text-dark" href="{{path('app_logout')}}" aria-disabled="true">Se déconnecter</a>
+							</li>
+
+						{% else %}
+							<li class="nav-item">
+								<a class="nav-link text-dark" href="{{path('app_login')}}" aria-disabled="true">
+									Se connecter</a>
+							</li>
+
+
+							<a class="btn btn-outline-dark justify-content-center" href="{{path('app_register')}}">
+								S'inscrire
+								<svg width="1em" height="1em" viewbox="0 0 16 16" class="bi bi-arrow-right-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8.354 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L9.793 7.5H5a.5.5 0 0 0 0 1h4.793l-2.147 2.146z"/>
+								</svg>
+							</a>
+						{% endif %}
+
+
+					</ul>
+				</div>
+			</nav>
+		</div>
+
+		<br><br>
+
+		{% for message in app.flashes('error') %}
+			<div class="col-xs4">
+				<div class="p-3 my-2 rounded-2 error">{{message}}</div>
+			</div>
+		{% endfor %}
+		<br><br>
+		<section class="container justify-content-center">
+			<section class="row">
+				<section class="col-lg-8 col-md-8 col-sm-10 col-xs-8 ">
+					<h1>Modification du mot passe de
+						{{ app.user.nom }}
+						{{ app.user.prenom }}</h1>
+					{% for message in app.flashes('error') %}
+						<div class="alert alert-danger">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							{{message}}
+						</div>
+					{% endfor %}
+					<form method="post">
+						<div
+							class="form-group">
+							{# <i class="fas fa-lg fa-lock text-info"></i> #}
+							<label for="pass">Mot de passe</label>
+							<input placeholder="Votre nouveau mot de passe" type="password" required class="form-control" id="pass" name="pass">
+						</div>
+						<div
+							class="form-group">
+							{# <i class="fas fa-lg fa-lock text-info"></i> #}
+							<label for="pass2">Confirmation du mot de passe</label>
+							<input placeholder="Confirmer le mot de passe" type="password" required class="form-control" id="pass2" name="pass2">
+						</div>
+						<button class="btn btn-outline-success">Valider</button>
+					</form>
+					<section>
+						<section>
+							<section>
+								<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+								<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+								<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+								<script src="{{ asset("vendor/jquery/jquery.min.js") }}"></script>
+								<script src="{{ asset("vendor/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
+							{% endblock %}

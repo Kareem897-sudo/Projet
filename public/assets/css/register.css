@@ -1,0 +1,20 @@
+.form {
+    line-height: 10px!important;
+    width: 100%;
+    position: relative;
+    top: -5vh;
+}
+
+h1 {
+    font-size: 40px;
+    border-bottom: 2px solid rgb(190, 189, 189);
+    margin-bottom: 20px;
+    margin-top: -15px;
+    text-align:center;
+} 
+
+.form-check-input {
+    position: absolute;
+    margin-top: 0rem!important;
+    margin-left: 0em!important; 
+}
